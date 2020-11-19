@@ -17,15 +17,17 @@
         <activity android:name="com.dhanas.android.periodical.login.ForgetPasswordActivity"></activity>
         <activity android:name="com.dhanas.android.periodical.login.SignupActivity" />
         <activity android:name="com.dhanas.android.periodical.login.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.dhanas.android.periodical.MainActivity"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/SplashTheme" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <activity
             android:name="com.dhanas.android.periodical.MainActivityApp"
             android:configChanges="orientation|screenSize"

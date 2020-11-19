@@ -38,6 +38,11 @@
         android:title="@string/menuitem_about"
         />
     <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        android:title="@string/log_out"
+        />
+    <item
         android:id="@+id/exit"
         android:icon="@drawable/ic_close_black_24dp"
         android:title="@string/menuitem_exit"

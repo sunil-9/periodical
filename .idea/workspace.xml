@@ -5,6 +5,10 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1a5574cc-a6e9-43cf-9fd2-6e67f30ad8d2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,6 +54,9 @@
     </key>
     <key name="android.template.-783376721">
       <recent name="de.arnowelzel.android.periodical.login" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.dhanas.android.periodical.login" />
     </key>
   </component>
   <component name="RunManager">
@@ -126,6 +133,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="413" y="123" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1605794229593">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="123" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1605794229593" />
+    <state x="488" y="84" key="#com.intellij.ide.util.MemberChooser" timestamp="1605795779667">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1605795779667" />
     <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605786096996">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -138,21 +153,25 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="263" y="123" key="AndroidCreateResourceFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1605782508026" />
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom" timestamp="1605787667452">
+    <state x="541" y="141" key="AndroidCreateXmlResourceDialog" timestamp="1605799454157">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605787667452" />
-    <state width="1323" height="161" key="GridCell.Tab.0.center" timestamp="1605787667451">
+    <state x="541" y="141" key="AndroidCreateXmlResourceDialog/0.0.1366.738@0.0.1366.738" timestamp="1605799454157" />
+    <state width="1323" height="9" key="GridCell.Tab.0.bottom" timestamp="1605799248040">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605787667451" />
-    <state width="1323" height="161" key="GridCell.Tab.0.left" timestamp="1605787667451">
+    <state width="1323" height="9" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605799248040" />
+    <state width="1323" height="9" key="GridCell.Tab.0.center" timestamp="1605799248040">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605787667451" />
-    <state width="1323" height="161" key="GridCell.Tab.0.right" timestamp="1605787667452">
+    <state width="1323" height="9" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605799248040" />
+    <state width="1323" height="9" key="GridCell.Tab.0.left" timestamp="1605799248039">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605787667452" />
+    <state width="1323" height="9" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605799248039" />
+    <state width="1323" height="9" key="GridCell.Tab.0.right" timestamp="1605799248040">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="9" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605799248040" />
   </component>
 </project>

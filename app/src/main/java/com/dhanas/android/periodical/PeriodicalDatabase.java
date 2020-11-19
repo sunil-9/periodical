@@ -26,6 +26,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
+import android.util.Log;
 
 import androidx.documentfile.provider.DocumentFile;
 
@@ -1167,6 +1168,8 @@ class PeriodicalDatabase {
             while ((byteRead = sourceStream.read(buffer, 0, 8192)) != -1) {
                 destinationStream.write(buffer, 0, byteRead);
             }
+            Log.e("backup file name", "backupToUri: "+ destinationFile );
+
             sourceStream.close();
             destinationStream.close();
             result = true;
@@ -1194,6 +1197,8 @@ class PeriodicalDatabase {
                 while ((byteRead = sourceStream.read(buffer, 0, 8192)) != -1) {
                     outputStream.write(buffer, 0, byteRead);
                 }
+                Log.e("backup jornal file name", "backupToUri: "+ destinationFile );
+
                 sourceStream.close();
                 outputStream.close();
                 result = true;
@@ -1271,6 +1276,7 @@ class PeriodicalDatabase {
                 while ((byteRead = sourceStream.read(buffer, 0, 8192)) != -1) {
                     destinationStream.write(buffer, 0, byteRead);
                 }
+
                 sourceStream.close();
                 destinationStream.close();
                 result = true;

@@ -1,5 +1,6 @@
 package com.dhanas.android.periodical.login;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -25,26 +27,31 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.dhanas.android.periodical.MainActivity;
+import com.dhanas.android.periodical.MainActivityApp;
 import com.dhanas.android.periodical.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static View view;
-
+    private FirebaseAuth mAuth;
     private static EditText emailid, password;
     private static Button loginButton;
     private static TextView forgotPassword, signUp;
     private static CheckBox show_hide_password;
     private static LinearLayout loginLayout;
     private static Animation shakeAnimation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         initViews();
         setListeners();
-
     }
 
     // Initiate Views
@@ -74,6 +81,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         } catch (Exception e) {
         }
     }
+
     // Set Listeners
     private void setListeners() {
         loginButton.setOnClickListener(this);
@@ -119,7 +127,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loginBtn:
-                checkValidation();
+                login();
+
                 break;
 
             case R.id.forgot_password:
@@ -140,7 +149,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     // Check Validation before login
-    private void checkValidation() {
+    private void login() {
         // Get email id and password
         String getEmailId = emailid.getText().toString();
         String getPassword = password.getText().toString();
@@ -162,9 +171,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this, "our Email Id is Invalid.", Toast.LENGTH_SHORT).show();
 
             // Else do login and do your stuff
-        else
-            Toast.makeText(this, "Do Login.", Toast.LENGTH_SHORT)
-                    .show();
-        startActivity(new Intent(this, MainActivity.class));
+        else {
+//            Toast.makeText(this, "Do Login.", Toast.LENGTH_SHORT).show();
+            mAuth = FirebaseAuth.getInstance();
+            mAuth.signInWithEmailAndPassword(getEmailId, getPassword)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("TAG", "signInWithEmail:success");
+                                startActivity(new Intent(LoginActivity.this, MainActivityApp.class));
+                                Toast.makeText(LoginActivity.this, "Authentication success.",
+                                        Toast.LENGTH_SHORT).show();
+                                finish();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w("TAG", "signInWithEmail:failure", task.getException());
+                                Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+//                                updateUI(null);
+                            }
+
+                            // ...
+                        }
+                    });
+
+        }
     }
 }

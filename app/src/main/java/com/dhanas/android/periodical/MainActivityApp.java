@@ -28,7 +28,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+
+import com.dhanas.android.periodical.login.LoginActivity;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.yariksoffice.lingver.Lingver;
 
 import androidx.core.view.GravityCompat;
@@ -309,6 +312,9 @@ public class MainActivityApp extends AppCompatActivity
             case R.id.options:
                 showOptions();
                 return true;
+            case R.id.logout:
+                logOut();
+                return true;
 
             case R.id.exit:
                 finishAndRemoveTask();
@@ -316,6 +322,13 @@ public class MainActivityApp extends AppCompatActivity
         }
 
         return true;
+    }
+
+    private void logOut() {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(MainActivityApp.this, LoginActivity.class));
+        finish();
+
     }
 
     /**
@@ -661,6 +674,9 @@ public class MainActivityApp extends AppCompatActivity
 
             builder.show();
         }
+
+        //TODO : ask for remote backup and upload in firebase
+
     }
 
     /**
@@ -762,6 +778,8 @@ public class MainActivityApp extends AppCompatActivity
 
             builder.show();
         }
+        //TODO : ask for remote restore and download from firebase
+
     }
 
     /**
