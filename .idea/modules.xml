@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="source/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/periodical-master.iml" filepath="$PROJECT_DIR$/.idea/modules/periodical-master.iml" group="periodical-master" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/periodical-master-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/periodical-master-app.iml" group="periodical-master/app" />
+      <module fileurl="file://$PROJECT_DIR$/source.iml" filepath="$PROJECT_DIR$/source.iml" group="source" />
+    </modules>
+  </component>
+</project>
